@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+*.egg-info/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build
+frontend/build/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# ML Model weights (too large for GitHub)
+*.pt
+*.safetensors
+*.bin
+backend/model_cache/
+backend/summary_model_구버전/
+backend/sum2/
+
+# Large training data
+training/processed_dialogues.csv

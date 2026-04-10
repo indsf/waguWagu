@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "type": "ad_classification",
+    "timestamp": "2025-08-15T02:06:14.940405",
+    "data": {
+      "blog_url": "https://example.com/blog1",
+      "blog_title": "íì¤í¸ ë¸ë¡ê·¸",
+      "predicted_probability": 0.75,
+      "is_correct": true,
+      "user_comment": "ì íí íë³ìëë¤"
+    }
+  },
+  {
+    "id": 2,
+    "type": "restaurant_rating",
+    "timestamp": "2025-08-15T02:06:24.221500",
+    "data": {
+      "restaurant_name": "ëêµ¬ë ë¬´íí­ì",
+      "rating": 5,
+      "visited": false,
+      "comment": "ë§ìì´ ë³´ì¬ì"
+    }
+  }
+]

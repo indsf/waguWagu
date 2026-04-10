@@ -1,0 +1,162 @@
+/* 전체 루트: 세로로 스크롤 가능, 아이템은 위에서부터 쌓임 */
+.home-root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* 홈 콘텐츠 전체를 가로 중앙 정렬 */
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s ease;
+}
+
+/* 실제 콘텐츠 박스 */
+.home-content {
+    /* 1) 페이지 중앙에 고정 폭 컨테이너 */
+    width: 100%;
+    max-width: 800px;          /* 원하는 최대 너비 */
+    margin: 0 auto;            /* 좌우 자동 마진으로 수평 중앙 */
+    
+    /* 2) 내부 정렬 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    /* 3) 패딩 */
+    padding: 80px 20px;
+    box-sizing: border-box;
+}
+
+/* 로고 */
+.main-logo {
+    width: 360px;
+    max-width: 100%;   /* 컨테이너 안에서 꽉 차지 않도록 */
+    height: auto;
+    margin-bottom: 24px;
+}
+
+/* 부제 */
+.subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+/* 검색창 컨테이너 */
+.search-bar-container {
+    position: relative;
+    width: 320px;
+    max-width: 90%;
+    margin-bottom: 16px;
+}
+
+/* 검색창 */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 24px;
+    padding: 4px 8px;
+    box-shadow: 0 2px 8px var(--shadow-light);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+.search-bar:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px var(--shadow-medium);
+}
+.search-bar input {
+    width: 260px;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 24px;
+    font-size: 1rem;
+    background: transparent;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+.search-bar input::placeholder {
+    color: var(--text-muted);
+}
+.search-bar button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+.search-bar button:hover {
+    background: var(--bg-tertiary);
+    color: var(--primary-color);
+}
+
+/* 퀵태그 */
+.quick-tags {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.quick-tags button {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px var(--shadow-light);
+}
+.quick-tags button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px var(--shadow-medium);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .home-content {
+        max-width: 100%;
+        padding: 60px 15px;
+    }
+    .main-logo {
+        width: 260px;
+    }
+    .search-bar {
+        width: 90%;
+        max-width: 320px;
+    }
+    .search-bar input {
+        width: 200px;
+        font-size: 0.9rem;
+    }
+    .quick-tags {
+        gap: 8px;
+        padding: 0 10px;
+    }
+    .quick-tags button {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-content {
+        padding: 40px 10px;
+    }
+    .main-logo {
+        width: 220px;
+    }
+    .search-bar input {
+        width: 160px;
+    }
+}

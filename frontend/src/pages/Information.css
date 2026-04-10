@@ -1,0 +1,902 @@
+/* src/Information.css */
+
+/* 전체 컨테이너 - 통일된 하얀 배경 */
+.info-root {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    background: #ffffff;
+    color: var(--text-primary);
+}
+
+/* 상단 로고 + 음식점명 - 컴팩트 */
+.info-topbar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.mini-logo {
+    width: 240px;
+    height: auto;
+    cursor: pointer;
+}
+
+.restaurant-chip {
+    display: flex;
+    align-items: center;
+}
+
+.restaurant-icon {
+    margin-right: 0.3rem;
+    font-size: 1.2rem;
+}
+
+.restaurant-chip-name {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+/* 검은색 가로줄 제거 (이미 topbar에서 처리) */
+
+/* 로딩 스피너 / 에러 메시지 */
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--border-color);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 0.5rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error-msg {
+    color: var(--danger-color);
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+}
+
+/* 메인 레이아웃: 컴팩트 그리드 */
+.info-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    max-width: 100%;
+    align-items: start;
+    min-height: calc(100vh - 120px);
+}
+
+/* 좌측: 지도 + 가게정보 - 컴팩트 */
+.info-map-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* 가게 기본 정보 카드 - 컴팩트 */
+.restaurant-info-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.restaurant-info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-icon {
+    font-size: 3rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.restaurant-details {
+    flex: 1;
+}
+
+.restaurant-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1f2937;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+}
+
+.restaurant-category {
+    font-size: 1rem;
+    color: #6b7280;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* 정보 그리드 */
+.restaurant-info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #3b82f6;
+    background: #ffffff;
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.info-content {
+    flex: 1;
+}
+
+.info-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.info-value {
+    font-size: 0.95rem;
+    color: #1f2937;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.info-link {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.info-link:hover {
+    border-bottom-color: #6366f1;
+}
+
+/* 지도 카드 - 컴팩트 */
+.map-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.map-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.map-header {
+    margin-bottom: 1.25rem;
+}
+
+.map-header h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+    letter-spacing: -0.025em;
+}
+
+/* map-wrapper: 16:9 비율로 고정 */
+.map-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.info-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 지도 오류 메시지 스타일 */
+.map-error {
+    color: #ef4444;
+    text-align: center;
+    padding: 2rem;
+    font-weight: 500;
+}
+
+/* 우측: 리뷰 정보 - 컴팩트 */
+.info-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* 해시태그 섹션 - 리뷰 인사이트 내부로 이동 */
+.hashtag-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.hashtag-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.hashtag-title {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #1f2937;
+}
+
+.hashtag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.hashtag-tag {
+    border-radius: 12px;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.hashtag-tag.positive-tag {
+    background-color: #10b981;
+    color: white;
+}
+
+.hashtag-tag.positive-tag:hover {
+    background-color: #059669;
+    transform: translateY(-1px);
+}
+
+.hashtag-tag.negative-tag {
+    background-color: #ef4444;
+    color: white;
+}
+
+.hashtag-tag.negative-tag:hover {
+    background-color: #dc2626;
+    transform: translateY(-1px);
+}
+
+.hashtag-none {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* 감성점수 시각화 섹션 - 현대적 디자인 */
+.sentiment-visualization {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* 점수/인사이트 가로 배치 컨테이너 */
+.score-insights-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* 메인 리뷰 스코어 카드 - 컴팩트 버전 */
+.review-score-card-compact {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.875rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* 점수 타이틀 섹션 */
+.score-title-section {
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+.score-title-section h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 0.25rem 0;
+    letter-spacing: -0.025em;
+}
+
+.score-title-section p {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.review-score-card-compact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* 스코어 헤더 - 컴팩트 */
+.score-header-compact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.score-badge-compact {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 16px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    font-size: 0.75rem;
+}
+
+.badge-icon {
+    font-size: 1rem;
+}
+
+.badge-text {
+    font-size: 0.8rem;
+    letter-spacing: 0.025em;
+}
+
+.score-value {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+}
+
+.score-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1f2937;
+    line-height: 1;
+}
+
+.score-total {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+/* 별점 섹션 - 컴팩트 */
+.score-stars-compact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding: 0.3rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.star {
+    font-size: 1rem;
+    margin-right: 0.1rem;
+    transition: all 0.3s ease;
+}
+
+.star.filled {
+    filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.8));
+    animation: starPulse 3s ease-in-out infinite;
+}
+
+.star.empty {
+    opacity: 0.2;
+    filter: grayscale(100%);
+}
+
+@keyframes starPulse {
+    0%, 100% { 
+        filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.8));
+        transform: scale(1);
+    }
+    50% { 
+        filter: drop-shadow(0 0 12px rgba(251, 191, 36, 1));
+        transform: scale(1.05);
+    }
+}
+
+.stars-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #4b5563;
+    letter-spacing: 0.025em;
+}
+
+/* 프로그레스 바 */
+.score-progress {
+    margin-bottom: 0.25rem;
+}
+
+.progress-track {
+    width: 100%;
+    height: 6px;
+    background: #f3f4f6;
+    border-radius: 9999px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 1s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: progressShimmer 2s infinite;
+}
+
+@keyframes progressShimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.25rem;
+    font-size: 0.7rem;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+/* 리뷰 인사이트 - 컴팩트 버전 */
+.review-insights-compact {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.875rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.review-insights-compact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.insight-header-compact {
+    margin-bottom: 0.5rem;
+}
+
+.insight-header-compact h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+    letter-spacing: -0.025em;
+}
+
+/* 인사이트 그리드 - 컴팩트 */
+.insights-grid-compact {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.insight-card-compact {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 0.5rem 0.3rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.insight-card-compact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-color: #3b82f6;
+}
+
+.insight-icon {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.insight-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.insight-number {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #1f2937;
+    line-height: 1;
+}
+
+.insight-label {
+    font-size: 0.6rem;
+    font-weight: 500;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* 특별 인사이트 - 컴팩트 */
+.special-insight-compact {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: linear-gradient(135deg, #ede9fe 0%, #f3f4f6 100%);
+    border: 1px solid #c4b5fd;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.special-insight-compact:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+}
+
+@keyframes specialShimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.special-insight-icon {
+    font-size: 1rem;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.special-insight-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #5b21b6;
+}
+
+/* 점수 카드 내 특별 인사이트 */
+.score-special-insight {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: linear-gradient(135deg, #ede9fe 0%, #f3f4f6 100%);
+    border: 1px solid #c4b5fd;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    margin-top: 0.75rem;
+}
+
+.score-special-insight:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+}
+
+.score-special-insight .special-insight-icon {
+    font-size: 1rem;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.score-special-insight .special-insight-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #5b21b6;
+}
+
+/* 해시태그 박스 - 독립적인 네모 테두리 섹션 */
+.hashtag-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.hashtag-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.hashtag-header {
+    margin-bottom: 0.75rem;
+}
+
+.hashtag-header h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+    letter-spacing: -0.025em;
+}
+
+/* 리뷰 요약 섹션 */
+.summary-all-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.summary-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.summary-section:hover {
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.summary-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+}
+
+.summary-content {
+    white-space: pre-wrap;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    color: #374151;
+}
+
+/* 태블릿 반응형 */
+@media (max-width: 1200px) {
+    .info-main {
+        padding: 1.25rem;
+        gap: 1.25rem;
+    }
+}
+
+/* 모바일 반응형 - 컴팩트 */
+@media (max-width: 768px) {
+    .info-topbar {
+        padding: 0.75rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .mini-logo {
+        width: 160px;
+    }
+    
+    .restaurant-chip-name {
+        font-size: 1.2rem;
+    }
+    
+    .info-main {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+    
+    /* 카드들 모바일 최적화 - 컴팩트 */
+    .restaurant-info-card,
+    .map-card,
+    .review-score-card-compact,
+    .review-insights-compact,
+    .hashtag-box,
+    .info-box {
+        padding: 0.875rem;
+        border-radius: 8px;
+    }
+    
+    .score-insights-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .restaurant-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    .restaurant-name {
+        font-size: 1.4rem;
+    }
+    
+    .restaurant-icon {
+        font-size: 2.5rem;
+    }
+    
+    .score-header {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .score-number {
+        font-size: 2.75rem;
+    }
+    
+    .score-stars {
+        justify-content: center;
+        padding: 0.75rem 0;
+        margin-bottom: 1rem;
+    }
+    
+    .insights-grid-compact {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .insight-card-compact {
+        padding: 0.75rem 0.5rem;
+    }
+    
+    .summary-section {
+        padding: 0.75rem;
+    }
+}
+
+/* 소형 모바일 반응형 */
+@media (max-width: 480px) {
+    .info-topbar {
+        padding: 0.5rem;
+    }
+    
+    .mini-logo {
+        width: 140px;
+    }
+    
+    .info-main {
+        padding: 0.75rem;
+        gap: 1.25rem;
+    }
+    
+    .restaurant-info-card,
+    .map-card,
+    .review-score-card-compact,
+    .review-insights-compact,
+    .hashtag-box,
+    .info-box {
+        padding: 0.75rem;
+        border-radius: 6px;
+    }
+    
+    .restaurant-name {
+        font-size: 1.2rem;
+    }
+    
+    .restaurant-icon {
+        font-size: 2.25rem;
+    }
+    
+    .score-number {
+        font-size: 2.25rem;
+    }
+    
+    .insights-grid-compact {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+        padding: 0.75rem;
+    }
+    
+    .special-insight {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .star {
+        font-size: 1.4rem;
+    }
+    
+    .insight-number {
+        font-size: 1.4rem;
+    }
+    
+    .summary-section {
+        padding: 0.625rem;
+    }
+    
+    .hashtag-tag {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.7rem;
+    }
+}
